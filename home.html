@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html class="light" lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -10,8 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
     <script>
         tailwind.config = {
             darkMode: "class",
@@ -46,169 +43,138 @@
                 'GRAD' 0,
                 'opsz' 24
         }
+        
+        /* Mobile menu styles */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        /* Ensure images don't overflow on small screens */
+        img, .bg-cover {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display">
     <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
         <div class="layout-container flex h-full grow flex-col">
-            <header
-                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e2db] dark:border-b-[#3a3324] px-4 sm:px-10 lg:px-40 py-3 bg-background-light dark:bg-background-dark">
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e2db] dark:border-b-[#3a3324] px-4 sm:px-10 lg:px-40 py-3 bg-background-light dark:bg-background-dark">
                 <div class="flex items-center gap-4">
                     <div class="size-6 text-primary">
                         <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z">
-                            </path>
+                            <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z"></path>
                         </svg>
                     </div>
-                    <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-brown dark:text-primary">
-                        Turmeric Co.</h2>
+                    <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-brown dark:text-primary">Golden spice Venture</h2>
                 </div>
                 <div class="hidden md:flex flex-1 justify-end gap-8">
                     <div class="flex items-center gap-9">
-                        <a class="text-sm font-medium leading-normal text-green dark:text-primary-light font-bold hover:text-green dark:hover:text-green"
-                            href="./home.html">Home</a>
-
-                        <a class="text-sm font-medium leading-normal text-brown dark:text-background-light hover:text-green dark:hover:text-green"
-                            href="./service.html">Our Services</a>
-                        <a class="text-sm font-medium leading-normal text-brown dark:text-background-light hover:text-green dark:hover:text-green"
-                            href="./aboutus.html">About Us</a>
-                        <a class="text-sm font-medium leading-normal text-brown dark:text-background hover:text-green dark:hover:text-green"
-                            href="./contact.html">Contact Us</a>
+                        <a class="text-sm font-medium leading-normal text-green dark:text-primary-light font-bold hover:text-green dark:hover:text-green" href="./home.html">Home</a>
+                        <a class="text-sm font-medium leading-normal text-brown dark:text-background-light hover:text-green dark:hover:text-green" href="./service.html">Our Services</a>
+                        <a class="text-sm font-medium leading-normal text-brown dark:text-background-light hover:text-green dark:hover:text-green" href="./aboutus.html">About Us</a>
+                        <a class="text-sm font-medium leading-normal text-brown dark:text-background hover:text-green dark:hover:text-green" href="./contact.html">Contact Us</a>
                     </div>
                 </div>
                 <div class="md:hidden">
-                    <button class="p-2 rounded-md text-brown dark:text-background-light">
+                    <button id="mobile-menu-toggle" class="p-2 rounded-md text-brown dark:text-background-light">
                         <span class="material-symbols-outlined">menu</span>
                     </button>
                 </div>
             </header>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-background-light dark:bg-background-dark z-50 shadow-lg p-6 md:hidden">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-lg font-bold text-brown dark:text-primary">Menu</h2>
+                    <button id="mobile-menu-close" class="p-2 rounded-md text-brown dark:text-background-light">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <a class="text-base font-medium leading-normal text-green dark:text-primary-light font-bold hover:text-green dark:hover:text-green" href="./home.html">Home</a>
+                    <a class="text-base font-medium leading-normal text-brown dark:text-background-light hover:text-green dark:hover:text-green" href="./service.html">Our Services</a>
+                    <a class="text-base font-medium leading-normal text-brown dark:text-background-light hover:text-green dark:hover:text-green" href="./aboutus.html">About Us</a>
+                    <a class="text-base font-medium leading-normal text-brown dark:text-background hover:text-green dark:hover:text-green" href="./contact.html">Contact Us</a>
+                </div>
+            </div>
+            
             <div class="flex flex-1 justify-center">
-                <!-- <div class="layout-content-container flex flex-col max-w-[960px] flex-1"> -->
-                <div class="layout-content-container flex flex-col flex-1">
-                    <!-- <header
-                        class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e2db] dark:border-b-[#3a3324] px-4 sm:px-10 lg:px-40 py-3 bg-background-light dark:bg-background-dark">
-                        <div class="flex items-center gap-4">
-                            <div class="size-6 text-primary">
-                                <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <h2
-                                class="text-lg font-bold leading-tight tracking-[-0.015em] text-brown dark:text-primary">
-                                Turmeric Co.
-                            </h2>
-                        </div>
-                        <div class="hidden md:flex flex-1 justify-end gap-8">
-                            <div class="flex items-center gap-9">
-                                <a class="text-sm font-medium leading-normal text-brown dark:text-background-light hover:text-green dark:hover:text-green"
-                                    href="./home.html">Home</a>
-                                <a class="text-sm font-medium leading-normal text-brown dark:text-background-light hover:text-green dark:hover:text-green"
-                                    href="./service.html">Our Services</a>
-                                <a class="text-sm font-medium leading-normal text-brown dark:text-background-light hover:text-green dark:hover:text-green"
-                                    href="./aboutus.html">About Us</a>
-                                <a class="text-sm font-medium leading-normal text-green dark:text-primary font-bold"
-                                    href="./contact.html">Contact Us</a>
-                            </div>
-                        </div>
-                        <div class="md:hidden">
-                            <button class="p-2 rounded-md text-brown dark:text-background-light">
-                                <span class="material-symbols-outlined">menu</span>
-                            </button>
-                        </div>
-                    </header> -->
-
+                <div class="layout-content-container flex flex-col flex-1 w-full max-w-[80vw]">
                     <main class="flex-1">
+                        <!-- Hero Section -->
                         <div class="@container">
                             <div class="@[480px]:p-4">
                                 <div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
                                     data-alt="A vibrant, sun-drenched turmeric field with rows of green plants under a clear blue sky."
                                     style='background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuALqhRcnv83sVAlQp-2iCcL8JB7krXTajyOjVa_x68z6AVXMlYbL2VnpmotsT-8_tB1q6xolmm0rdGAnmqNRRxOWK3c50tgqI1IUeOkUIGV_d41ykg5lsVDIWQn1oJYIyUjkxaWjfKmBw4jbs3Wbql1PONo652whmq_Vco1eeJZuDg-liCBfy7zA6zhqR68cpv2KebPG1DQ0xoGKAZfnOZCxn_4Xv4AUEvEYsRPddYa-N8o8TZkR0T1STv5DGYJ9r9TtMyL5N00BvM");'>
-                                    <div class="flex flex-col gap-2 text-center max-w-2xl">
-                                        <h1
-                                            class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                    <div class="flex flex-col gap-2 text-center max-w-2xl px-4">
+                                        <h1 class="text-white text-3xl sm:text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
                                             The Golden Spice: A Journey from Farm to Table</h1>
-                                        <h2
-                                            class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                                            Connecting you with the finest, ethically sourced turmeric, straight from
-                                            our farms to your business.</h2>
+                                        <h2 class="text-white text-sm sm:text-base font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                                            Connecting you with the finest, ethically sourced turmeric, straight from our farms to your business.</h2>
                                     </div>
-                                    <button
-                                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-[#181611] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                                    <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-[#181611] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-primary/90 transition-colors">
                                         <span class="truncate">Learn More</span>
                                     </button>
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- Commitment Section -->
                         <div class="flex flex-col gap-10 px-4 py-10 @container">
                             <div class="flex flex-col gap-6 text-center items-center">
                                 <div class="flex flex-col gap-4">
-                                    <h1
-                                        class="text-[#181611] dark:text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
+                                    <h1 class="text-[#181611] dark:text-white tracking-light text-2xl sm:text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
                                         Our Commitment to Quality and Sustainability</h1>
-                                    <p
-                                        class="text-[#897c61] dark:text-gray-300 text-base font-normal leading-normal max-w-[720px]">
-                                        We are dedicated to providing the highest quality turmeric while ensuring
-                                        sustainable practices and fair partnerships with our farmers.</p>
+                                    <p class="text-[#897c61] dark:text-gray-300 text-base font-normal leading-normal max-w-[720px]">
+                                        We are dedicated to providing the highest quality turmeric while ensuring sustainable practices and fair partnerships with our farmers.</p>
                                 </div>
-                                <button
-                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-[#181611] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] w-fit hover:bg-primary/90 transition-colors">
+                                <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-[#181611] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] w-fit hover:bg-primary/90 transition-colors">
                                     <span class="truncate">Explore Our Process</span>
                                 </button>
                             </div>
-                            <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-0">
-                                <div
-                                    class="flex flex-1 gap-4 rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark p-6 flex-col items-center text-center">
-                                    <div class="text-primary text-4xl"><span
-                                            class="material-symbols-outlined">eco</span></div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-0">
+                                <div class="flex flex-1 gap-4 rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark p-6 flex-col items-center text-center">
+                                    <div class="text-primary text-4xl"><span class="material-symbols-outlined">eco</span></div>
                                     <div class="flex flex-col gap-1">
-                                        <h2 class="text-[#181611] dark:text-white text-lg font-bold leading-tight">
-                                            Authentic Sourcing</h2>
-                                        <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">
-                                            We work directly with local farmers to bring you the most authentic and
-                                            flavorful turmeric.</p>
+                                        <h2 class="text-[#181611] dark:text-white text-lg font-bold leading-tight">Authentic Sourcing</h2>
+                                        <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">We work directly with local farmers to bring you the most authentic and flavorful turmeric.</p>
                                     </div>
                                 </div>
-                                <div
-                                    class="flex flex-1 gap-4 rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark p-6 flex-col items-center text-center">
-                                    <div class="text-primary text-4xl"><span
-                                            class="material-symbols-outlined">groups</span></div>
+                                <div class="flex flex-1 gap-4 rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark p-6 flex-col items-center text-center">
+                                    <div class="text-primary text-4xl"><span class="material-symbols-outlined">groups</span></div>
                                     <div class="flex flex-col gap-1">
-                                        <h2 class="text-[#181611] dark:text-white text-lg font-bold leading-tight">
-                                            Sustainable Farming</h2>
-                                        <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">
-                                            Our farming practices are designed to be environmentally friendly and
-                                            support the local ecosystem.</p>
+                                        <h2 class="text-[#181611] dark:text-white text-lg font-bold leading-tight">Sustainable Farming</h2>
+                                        <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">Our farming practices are designed to be environmentally friendly and support the local ecosystem.</p>
                                     </div>
                                 </div>
-                                <div
-                                    class="flex flex-1 gap-4 rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark p-6 flex-col items-center text-center">
-                                    <div class="text-primary text-4xl"><span
-                                            class="material-symbols-outlined">verified</span></div>
+                                <div class="flex flex-1 gap-4 rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark p-6 flex-col items-center text-center">
+                                    <div class="text-primary text-4xl"><span class="material-symbols-outlined">verified</span></div>
                                     <div class="flex flex-col gap-1">
-                                        <h2 class="text-[#181611] dark:text-white text-lg font-bold leading-tight">
-                                            Unmatched Quality</h2>
-                                        <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">
-                                            Every batch of our turmeric undergoes rigorous quality checks to ensure it
-                                            meets the highest standards.</p>
+                                        <h2 class="text-[#181611] dark:text-white text-lg font-bold leading-tight">Unmatched Quality</h2>
+                                        <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">Every batch of our turmeric undergoes rigorous quality checks to ensure it meets the highest standards.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-4">
+                        
+                        <!-- Gallery Section -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
                             <div class="flex flex-col gap-3 pb-3">
                                 <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg"
                                     data-alt="Close-up of a smiling farmer holding a handful of freshly harvested turmeric roots, dirt still clinging to them."
                                     style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwB_JgrRMOVrvKv8iEBowyW_UBTg3I6WzNsXJWsAZ5VYTv4JCZEUzhpXC1VDxDvMnGCdPFbxBW5OE9aYhMSmRwX8d8Nm28HGQzsZwTkPZnczTMtXbquHZrP56DgM-iPstE_adLAJHrwaOXmoM__dVqXPxJxkglUgc_Nazu9oHhcSoN6uXg9vMSlcGA5qdIFUqMJ55G4r8rSSbp2mr_umtTAhMN3nJ0LhupMNjaIih-q_WqnWvtnuzmSnMho6qXrMs42zRXAITP0PU");'>
                                 </div>
                                 <div>
-                                    <p class="text-[#181611] dark:text-white text-lg font-medium leading-normal">Our
-                                        Farmers</p>
-                                    <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">Meet
-                                        the dedicated farmers who are the heart of our company.</p>
+                                    <p class="text-[#181611] dark:text-white text-lg font-medium leading-normal">Our Farmers</p>
+                                    <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">Meet the dedicated farmers who are the heart of our company.</p>
                                 </div>
                             </div>
                             <div class="flex flex-col gap-3 pb-3">
@@ -217,10 +183,8 @@
                                     style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAG2gnLgT8Vy9vwIYgx0gI0iRc52Hrg3qwcEo6LthDQLOLjwMJ0soEbG7g-H6N6MUlw0gxSSuVwL8Nq85yuHNxbshE-YRqLzn9w3V0qlMO4SYaz-bbTN91xUQuV30d6YnnVWk6iBz_UeEiOhu9PflI1EsWLBFuIVb6rac-01zMMK8Me_oab_N_3nbHB3NC_c4aPxzt9G7MUI_kSbzL415dywhHTkntNH5zv-kHby2BZ9YwXWGYc5LmUtJ8mOxQYyYV2y-wKeMRXfr8");'>
                                 </div>
                                 <div>
-                                    <p class="text-[#181611] dark:text-white text-lg font-medium leading-normal">The
-                                        Harvest</p>
-                                    <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">A
-                                        glimpse into the careful process of harvesting our golden spice.</p>
+                                    <p class="text-[#181611] dark:text-white text-lg font-medium leading-normal">The Harvest</p>
+                                    <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">A glimpse into the careful process of harvesting our golden spice.</p>
                                 </div>
                             </div>
                             <div class="flex flex-col gap-3 pb-3">
@@ -229,32 +193,25 @@
                                     style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPJzpHTRX8oeAlIwepOYX6Tw7j1lbat5SsZSYYNgySLrbyOOWZvaG8QUtXx7V7sL9GDRTb8vIVsplrf7ttQaKl3hGbpXpXfPxx8dELGYUcYIiFPwVzV80ZwDZMLK5HrifEAxZWCLByoNaMzwaQQyLyT4jfWFDSm0knesqzQ7efXC8NiWQ7LKUDAfWEdq9fSr8MHvYxvEjOMNB1sJRTEZYPUQvZYxdW__nW2T_xb3ntYMT80yaavAe6dyLcGudx7Bt4czuo2wl5HVk");'>
                                 </div>
                                 <div>
-                                    <p class="text-[#181611] dark:text-white text-lg font-medium leading-normal">The
-                                        Final Product</p>
-                                    <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">From
-                                        our farms to your hands, the finest turmeric you can find.</p>
+                                    <p class="text-[#181611] dark:text-white text-lg font-medium leading-normal">The Final Product</p>
+                                    <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">From our farms to your hands, the finest turmeric you can find.</p>
                                 </div>
                             </div>
                         </div>
-                        <div
-                            class="flex flex-col gap-8 overflow-x-hidden p-4 py-10 bg-background-light dark:bg-background-dark">
-                            <h2 class="text-[#181611] dark:text-white text-3xl font-bold leading-tight text-center">What
-                                Our Partners Say</h2>
-                            <div class="grid md:grid-cols-2 gap-8">
-                                <div
-                                    class="flex flex-col gap-3 p-6 rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark">
+                        
+                        <!-- Testimonials Section -->
+                        <div class="flex flex-col gap-8 overflow-x-hidden p-4 py-10 bg-background-light dark:bg-background-dark">
+                            <h2 class="text-[#181611] dark:text-white text-2xl sm:text-3xl font-bold leading-tight text-center">What Our Partners Say</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="flex flex-col gap-3 p-6 rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark">
                                     <div class="flex items-center gap-3">
                                         <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12"
                                             data-alt="Portrait of John Doe, a middle-aged man with a friendly smile."
                                             style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArSo9PEzhEO7hYBfqrJnUdY8OYchzyMiEZ9utp42SPxyGmHVdDl2-emXgyKDHq1ZteeygeXt3hBfUDa2BpUDzD2dAAbFFfKuISz85A-vYHOnLcDy40raymgd1Dtv3Vodgfa_HYADH8tXq6isk03qlcT10De0yPfKOCtOBz3HpNNrmAl0X9TIOlQ0QvChfbCl8ilJJRkcCtm01WJjA6xwyfsx3hQUbCDIdMJYGX0G7xaYo2VCjkFj1whTwD6AQv2bT2ZUUD3NLSRKE");'>
                                         </div>
                                         <div class="flex-1">
-                                            <p
-                                                class="text-[#181611] dark:text-white text-base font-medium leading-normal">
-                                                John Doe, Spice Importer</p>
-                                            <p
-                                                class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">
-                                                March 15, 2023</p>
+                                            <p class="text-[#181611] dark:text-white text-base font-medium leading-normal">John Doe, Spice Importer</p>
+                                            <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">March 15, 2023</p>
                                         </div>
                                     </div>
                                     <div class="flex gap-0.5 text-primary">
@@ -265,24 +222,17 @@
                                         <span class="material-symbols-outlined text-xl">star</span>
                                     </div>
                                     <p class="text-[#181611] dark:text-gray-300 text-base font-normal leading-normal">
-                                        "The quality of the turmeric is exceptional. Our customers have been raving
-                                        about it. The partnership with this company has been a game-changer for our
-                                        business."</p>
+                                        "The quality of the turmeric is exceptional. Our customers have been raving about it. The partnership with this company has been a game-changer for our business."</p>
                                 </div>
-                                <div
-                                    class="flex flex-col gap-3 p-6 rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark">
+                                <div class="flex flex-col gap-3 p-6 rounded-lg border border-primary/20 bg-background-light dark:bg-background-dark">
                                     <div class="flex items-center gap-3">
                                         <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12"
                                             data-alt="Portrait of Jane Smith, a woman with a warm smile, standing in a field."
                                             style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8FSzdtu7MHjxSfQjfaubthbE-eg7CbTMCsEqR9yxzYavn9I8c2obiC4Ef6M2cKZoaDinKBCLq-IELjNk16FLjPeTdPfzjikE8gCn6eNM_PLvH3PqSXOOxWbdUziwn-gn353PYTIP7VOjUMLCd51ZKr16XX1WcMApnOAlp2t2oCxXMFSukDcekwVLqMSAQmETLviiHMeKbs8BK3Id1MXROxQCsUaVXzcmZw-ZY6BGTm2k48-Bn5V6P9fa78h9hDmkF5aFjvJt2QKc");'>
                                         </div>
                                         <div class="flex-1">
-                                            <p
-                                                class="text-[#181611] dark:text-white text-base font-medium leading-normal">
-                                                Jane Smith, Farmer</p>
-                                            <p
-                                                class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">
-                                                February 28, 2023</p>
+                                            <p class="text-[#181611] dark:text-white text-base font-medium leading-normal">Jane Smith, Farmer</p>
+                                            <p class="text-[#897c61] dark:text-gray-300 text-sm font-normal leading-normal">February 28, 2023</p>
                                         </div>
                                     </div>
                                     <div class="flex gap-0.5 text-primary">
@@ -293,56 +243,47 @@
                                         <span class="material-symbols-outlined text-xl">star</span>
                                     </div>
                                     <p class="text-[#181611] dark:text-gray-300 text-base font-normal leading-normal">
-                                        "Working with this company has been a blessing. They truly care about the
-                                        farmers and ensure we get a fair price for our hard work."</p>
+                                        "Working with this company has been a blessing. They truly care about the farmers and ensure we get a fair price for our hard work."</p>
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- CTA Section -->
                         <div class="bg-primary/20 dark:bg-primary/10 py-16 px-4 text-center">
                             <div class="max-w-2xl mx-auto">
-                                <h2 class="text-3xl font-bold text-[#181611] dark:text-white mb-4">Connect with Us to
-                                    Source the Finest Turmeric</h2>
-                                <p class="text-[#897c61] dark:text-gray-300 mb-8">Join us in our journey to bring the
-                                    golden spice to the world. Contact us to learn more about our products and
-                                    partnership opportunities.</p>
-                                <button
-                                    class="flex mx-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-[#181611] text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                                <h2 class="text-2xl sm:text-3xl font-bold text-[#181611] dark:text-white mb-4">Connect with Us to Source the Finest Turmeric</h2>
+                                <p class="text-[#897c61] dark:text-gray-300 mb-8">Join us in our journey to bring the golden spice to the world. Contact us to learn more about our products and partnership opportunities.</p>
+                                <button class="flex mx-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-[#181611] text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
                                     <span class="truncate">Get In Touch</span>
                                 </button>
                             </div>
                         </div>
                     </main>
-                    <footer
-                        class="bg-background-light dark:bg-background-dark border-t border-primary/20 text-[#181611] dark:text-white p-10">
+                    
+                    <!-- Footer -->
+                    <footer class="bg-background-light dark:bg-background-dark border-t border-primary/20 text-[#181611] dark:text-white p-6 sm:p-10">
                         <div class="max-w-[960px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                             <div>
                                 <h3 class="text-lg font-bold mb-4">Golden Spice Venture</h3>
-                                <p class="text-sm text-[#897c61] dark:text-gray-300">Connecting farms to your table with
-                                    the highest quality, ethically sourced turmeric.</p>
+                                <p class="text-sm text-[#897c61] dark:text-gray-300">Connecting farms to your table with the highest quality, ethically sourced turmeric.</p>
                             </div>
                             <div>
                                 <h3 class="text-lg font-bold mb-4">Quick Links</h3>
                                 <ul class="space-y-2 text-sm">
-                                    <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-gray-300"
-                                            href="#">About Us</a></li>
-                                    <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-gray-300"
-                                            href="#">Our Process</a></li>
-                                    <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-gray-300"
-                                            href="#">Testimonials</a></li>
-                                    <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-gray-300"
-                                            href="#">Contact</a></li>
+                                    <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-gray-300" href="#">About Us</a></li>
+                                    <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-gray-300" href="#">Our Process</a></li>
+                                    <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-gray-300" href="#">Testimonials</a></li>
+                                    <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-gray-300" href="#">Contact</a></li>
                                 </ul>
                             </div>
                             <div>
                                 <h3 class="text-lg font-bold mb-4">Contact Us</h3>
-                                <p class="text-sm text-[#897c61] dark:text-gray-300">123 Spice Lane, Turmeric Town,
-                                    45678</p>
+                                <p class="text-sm text-[#897c61] dark:text-gray-300">123 Spice Lane, Turmeric Town, 45678</p>
                                 <p class="text-sm text-[#897c61] dark:text-gray-300">info@turmericexport.co</p>
                                 <p class="text-sm text-[#897c61] dark:text-gray-300">+1 234 567 890</p>
                             </div>
                         </div>
-                        <div
-                            class="mt-8 pt-8 border-t border-primary/20 text-center text-sm text-[#897c61] dark:text-gray-300">
+                        <div class="mt-8 pt-8 border-t border-primary/20 text-center text-sm text-[#897c61] dark:text-gray-300">
                             © 2024 Golden Spice Venture All Rights Reserved.
                         </div>
                     </footer>
@@ -350,6 +291,31 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuToggle && mobileMenuClose && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.add('open');
+                });
+                
+                mobileMenuClose.addEventListener('click', function() {
+                    mobileMenu.classList.remove('open');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+                        mobileMenu.classList.remove('open');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
-
 </html>

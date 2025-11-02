@@ -35,6 +35,56 @@
             },
         }
     </script>
+     <style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+ .whatsapp-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #25D366;
+  -webkit-mask: url('./img/whatsapp icon_8704827.png') no-repeat center;
+  -webkit-mask-size: contain;
+  mask: url('./img/whatsapp icon_8704827.png') no-repeat center;
+  mask-size: contain;
+}
+
+  .whatsapp-float:hover .whatsapp-icon {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Tooltip text */
+  .tooltip {
+    position: absolute;
+    right: 70px;
+    bottom: 0.45rem;
+    background: #25D366;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .whatsapp-float:hover .tooltip {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>
     <style>
         .material-symbols-outlined {
             font-variation-settings:
@@ -43,19 +93,20 @@
                 'GRAD' 0,
                 'opsz' 24
         }
-        
+
         /* Mobile menu styles */
         .mobile-menu {
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
         }
-        
+
         .mobile-menu.open {
             transform: translateX(0);
         }
-        
+
         /* Ensure images don't overflow on small screens */
-        img, .bg-cover {
+        img,
+        .bg-cover {
             max-width: 100%;
             height: auto;
         }
@@ -76,7 +127,7 @@
                         </svg>
                     </div>
                     <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-brown dark:text-primary">
-                       Golden spice Venture
+                        Golden spice Venture
                     </h2>
                 </div>
                 <div class="hidden md:flex flex-1 justify-end gap-8">
@@ -97,9 +148,10 @@
                     </button>
                 </div>
             </header>
-            
+
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-background-light dark:bg-background-dark z-50 shadow-lg p-6 md:hidden">
+            <div id="mobile-menu"
+                class="mobile-menu fixed top-0 right-0 h-full w-64 bg-background-light dark:bg-background-dark z-50 shadow-lg p-6 md:hidden">
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-lg font-bold text-brown dark:text-primary">Menu</h2>
                     <button id="mobile-menu-close" class="p-2 rounded-md text-brown dark:text-background-light">
@@ -131,19 +183,14 @@
                                         class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em]">
                                         Connecting the World to the Golden Spice: Our Export &amp; Logistics Expertise
                                     </h1>
-                                    <h2
-                                        class="text-white text-sm sm:text-base font-normal leading-normal">
+                                    <h2 class="text-white text-sm sm:text-base font-normal leading-normal">
                                         Seamless and sustainable logistics from farm to global markets.
                                     </h2>
                                 </div>
-                                <button
-                                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 sm:h-12 sm:px-5 bg-primary text-[#181611] text-sm sm:text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
-                                    <span class="truncate">Request a Quote</span>
-                                </button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Journey Section -->
                     <div class="mt-6 sm:mt-8">
                         <h2
@@ -158,7 +205,9 @@
                             <div class="flex flex-1 flex-col py-3">
                                 <p class="text-[#181611] dark:text-white text-base font-medium leading-normal">Sourcing
                                     &amp; Quality Control</p>
-                                <p class="text-[#897c61] dark:text-[#a89b82] text-sm sm:text-base font-normal leading-normal">Ensuring
+                                <p
+                                    class="text-[#897c61] dark:text-[#a89b82] text-sm sm:text-base font-normal leading-normal">
+                                    Ensuring
                                     the best turmeric from our farms</p>
                             </div>
                             <div class="flex flex-col items-center gap-1">
@@ -170,7 +219,9 @@
                             <div class="flex flex-1 flex-col py-3">
                                 <p class="text-[#181611] dark:text-white text-base font-medium leading-normal">Packaging
                                     &amp; Processing</p>
-                                <p class="text-[#897c61] dark:text-[#a89b82] text-sm sm:text-base font-normal leading-normal">Carefully
+                                <p
+                                    class="text-[#897c61] dark:text-[#a89b82] text-sm sm:text-base font-normal leading-normal">
+                                    Carefully
                                     packaging for freshness and quality</p>
                             </div>
                             <div class="flex flex-col items-center gap-1">
@@ -182,7 +233,8 @@
                             <div class="flex flex-1 flex-col py-3">
                                 <p class="text-[#181611] dark:text-white text-base font-medium leading-normal">Global
                                     Logistics &amp; Shipping</p>
-                                <p class="text-[#897c61] dark:text-[#a89b82] text-sm sm:text-base font-normal leading-normal">
+                                <p
+                                    class="text-[#897c61] dark:text-[#a89b82] text-sm sm:text-base font-normal leading-normal">
                                     Efficiently shipping to our global partners</p>
                             </div>
                             <div class="flex flex-col items-center gap-1 pb-3">
@@ -193,12 +245,13 @@
                             <div class="flex flex-1 flex-col py-3">
                                 <p class="text-[#181611] dark:text-white text-base font-medium leading-normal">Delivery
                                     &amp; Customer Support</p>
-                                <p class="text-[#897c61] dark:text-[#a89b82] text-sm sm:text-base font-normal leading-normal">
+                                <p
+                                    class="text-[#897c61] dark:text-[#a89b82] text-sm sm:text-base font-normal leading-normal">
                                     Supporting our customers every step of the way</p>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Why Choose Us Section -->
                     <div class="mt-6 sm:mt-8">
                         <h2
@@ -213,7 +266,8 @@
                                     <h2 class="text-[#181611] dark:text-white text-base font-bold leading-tight">
                                         Uncompromising Quality</h2>
                                     <p class="text-[#897c61] dark:text-[#a89b82] text-sm font-normal leading-normal">We
-                                        ensure the highest quality turmeric through rigorous testing and quality control.
+                                        ensure the highest quality turmeric through rigorous testing and quality
+                                        control.
                                     </p>
                                 </div>
                             </div>
@@ -222,7 +276,8 @@
                                 <div class="text-[#181611] dark:text-white text-2xl"><span
                                         class="material-symbols-outlined">eco</span></div>
                                 <div class="flex flex-col gap-1">
-                                    <h2 class="text-[#181611] dark:text-white text-base font-bold leading-tight">Sustainable
+                                    <h2 class="text-[#181611] dark:text-white text-base font-bold leading-tight">
+                                        Sustainable
                                         Practices</h2>
                                     <p class="text-[#897c61] dark:text-[#a89b82] text-sm font-normal leading-normal">Our
                                         commitment to sustainable farming and logistics practices.</p>
@@ -241,102 +296,133 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Additional Services Section -->
                     <div class="mt-8 sm:mt-12 px-4">
-                        <h2 class="text-[#181611] dark:text-white text-xl sm:text-2xl font-bold leading-tight tracking-[-0.033em] mb-6">Our Export Services</h2>
+                        <h2
+                            class="text-[#181611] dark:text-white text-xl sm:text-2xl font-bold leading-tight tracking-[-0.033em] mb-6">
+                            Our Export Services</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="bg-white dark:bg-[#2c2416] p-6 rounded-lg shadow-sm border border-[#e6e2db] dark:border-[#3f382a]">
+                            <div
+                                class="bg-white dark:bg-[#2c2416] p-6 rounded-lg shadow-sm border border-[#e6e2db] dark:border-[#3f382a]">
                                 <div class="flex items-start gap-4">
                                     <div class="bg-primary/20 dark:bg-primary/30 p-3 rounded-full">
-                                        <span class="material-symbols-outlined text-brown dark:text-primary text-2xl">local_shipping</span>
+                                        <span
+                                            class="material-symbols-outlined text-brown dark:text-primary text-2xl">local_shipping</span>
                                     </div>
                                     <div>
                                         <h3 class="text-lg font-bold text-brown dark:text-primary mb-2">Bulk Export</h3>
-                                        <p class="text-[#897c61] dark:text-[#a89b82] text-sm">Large-scale turmeric export for distributors and wholesalers with competitive pricing and reliable delivery.</p>
+                                        <p class="text-[#897c61] dark:text-[#a89b82] text-sm">Large-scale turmeric
+                                            export for distributors and wholesalers with competitive pricing and
+                                            reliable delivery.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-white dark:bg-[#2c2416] p-6 rounded-lg shadow-sm border border-[#e6e2db] dark:border-[#3f382a]">
+                            <div
+                                class="bg-white dark:bg-[#2c2416] p-6 rounded-lg shadow-sm border border-[#e6e2db] dark:border-[#3f382a]">
                                 <div class="flex items-start gap-4">
                                     <div class="bg-primary/20 dark:bg-primary/30 p-3 rounded-full">
-                                        <span class="material-symbols-outlined text-brown dark:text-primary text-2xl">inventory_2</span>
+                                        <span
+                                            class="material-symbols-outlined text-brown dark:text-primary text-2xl">inventory_2</span>
                                     </div>
                                     <div>
-                                        <h3 class="text-lg font-bold text-brown dark:text-primary mb-2">Custom Packaging</h3>
-                                        <p class="text-[#897c61] dark:text-[#a89b82] text-sm">Branded packaging solutions tailored to your market requirements and customer preferences.</p>
+                                        <h3 class="text-lg font-bold text-brown dark:text-primary mb-2">Custom Packaging
+                                        </h3>
+                                        <p class="text-[#897c61] dark:text-[#a89b82] text-sm">Branded packaging
+                                            solutions tailored to your market requirements and customer preferences.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- CTA Section -->
                     <div class="bg-primary/20 dark:bg-primary/10 mt-10 sm:mt-16 p-6 sm:p-8 rounded-lg mx-4">
                         <div class="text-center max-w-2xl mx-auto">
-                            <h2 class="text-xl sm:text-2xl font-bold text-[#181611] dark:text-white mb-4">Ready to Export With Us?</h2>
-                            <p class="text-[#897c61] dark:text-gray-300 mb-6 text-sm sm:text-base">Join our network of satisfied global partners and experience the difference of working with a trusted turmeric exporter.</p>
+                            <h2 class="text-xl sm:text-2xl font-bold text-[#181611] dark:text-white mb-4">Ready to
+                                Export With Us?</h2>
+                            <p class="text-[#897c61] dark:text-gray-300 mb-6 text-sm sm:text-base">Join our network of
+                                satisfied global partners and experience the difference of working with a trusted
+                                turmeric exporter.</p>
                             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <button class="flex justify-center items-center py-3 px-6 rounded-lg bg-primary text-brown font-bold text-sm sm:text-base hover:bg-primary/90 transition-colors">
-                                    Request Quote
-                                </button>
-                                <button class="flex justify-center items-center py-3 px-6 rounded-lg border border-brown dark:border-primary text-brown dark:text-primary font-bold text-sm sm:text-base hover:bg-brown/5 dark:hover:bg-primary/10 transition-colors">
+                                <a href="./contact.html">
+                                    <button
+                                        class="flex justify-center items-center py-3 px-6 rounded-lg bg-primary text-brown font-bold text-sm sm:text-base hover:bg-primary/90 transition-colors">
+                                        Contact Sales
+                                    </button>
+                                </a>
+                                <!-- <button class="flex justify-center items-center py-3 px-6 rounded-lg border border-brown dark:border-primary text-brown dark:text-primary font-bold text-sm sm:text-base hover:bg-brown/5 dark:hover:bg-primary/10 transition-colors">
                                     Contact Sales
-                                </button>
+                                </button> -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Footer -->
-            <footer class="bg-white dark:bg-[#2c2416] border-t border-solid border-t-[#e6e2db] dark:border-t-[#3a3324] px-4 sm:px-10 lg:px-40 py-8 mt-10">
+            <footer
+                class="bg-white dark:bg-[#2c2416] border-t border-solid border-t-[#e6e2db] dark:border-t-[#3a3324] px-4 sm:px-10 lg:px-40 py-8 mt-10">
                 <div class="max-w-[960px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
                         <h3 class="text-lg font-bold mb-4 text-brown dark:text-primary">Turmeric Co.</h3>
-                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">Connecting farms to global markets with the highest quality, ethically sourced turmeric.</p>
+                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">Connecting farms to global markets with
+                            the highest quality, ethically sourced turmeric.</p>
                     </div>
                     <div>
                         <h3 class="text-lg font-bold mb-4 text-brown dark:text-primary">Quick Links</h3>
                         <ul class="space-y-2 text-sm">
-                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]" href="./home.html">Home</a></li>
-                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]" href="./service.html">Our Services</a></li>
-                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]" href="./aboutus.html">About Us</a></li>
-                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]" href="./contact.html">Contact</a></li>
+                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]"
+                                    href="./home.html">Home</a></li>
+                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]"
+                                    href="./service.html">Our Services</a></li>
+                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]"
+                                    href="./aboutus.html">About Us</a></li>
+                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]"
+                                    href="./contact.html">Contact</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-lg font-bold mb-4 text-brown dark:text-primary">Contact Us</h3>
-                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">123 Turmeric Lane, Farmville, India</p>
-                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">contact@turmeric.com</p>
-                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">+1 234 567 890</p>
+                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">Parvana Nagar Nanded, Maharashtra, India
+                        </p>
+                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">goldenspiceventure@gmail.com</p>
+                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">+91 97636 06444</p>
                     </div>
                 </div>
-                <div class="mt-8 pt-8 border-t border-primary/20 text-center text-sm text-[#897c61] dark:text-[#a1967d]">
+                <div
+                    class="mt-8 pt-8 border-t border-primary/20 text-center text-sm text-[#897c61] dark:text-[#a1967d]">
                     © 2024 Golden Spice Venture All Rights Reserved.
                 </div>
             </footer>
         </div>
     </div>
-    
+
+    <a href="https://wa.me/919763606444" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
+        title="Send Message">
+        <img src="./img/whatsapp icon_8704827.png" alt="WhatsApp" class="whatsapp-icon">
+        <span class="tooltip">Send Message</span>
+    </a>
+
+
     <script>
         // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const mobileMenuClose = document.getElementById('mobile-menu-close');
             const mobileMenu = document.getElementById('mobile-menu');
-            
+
             if (mobileMenuToggle && mobileMenuClose && mobileMenu) {
-                mobileMenuToggle.addEventListener('click', function() {
+                mobileMenuToggle.addEventListener('click', function () {
                     mobileMenu.classList.add('open');
                 });
-                
-                mobileMenuClose.addEventListener('click', function() {
+
+                mobileMenuClose.addEventListener('click', function () {
                     mobileMenu.classList.remove('open');
                 });
-                
+
                 // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
+                document.addEventListener('click', function (event) {
                     if (!mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
                         mobileMenu.classList.remove('open');
                     }

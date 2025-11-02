@@ -40,6 +40,56 @@
         }
     </script>
     <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .whatsapp-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #25D366;
+            -webkit-mask: url('./img/whatsapp icon_8704827.png') no-repeat center;
+            -webkit-mask-size: contain;
+            mask: url('./img/whatsapp icon_8704827.png') no-repeat center;
+            mask-size: contain;
+        }
+
+        .whatsapp-float:hover .whatsapp-icon {
+            transform: scale(1.1);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Tooltip text */
+        .tooltip {
+            position: absolute;
+            right: 70px;
+            bottom: 0.45rem;
+            background: #25D366;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(10px);
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover .tooltip {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings:
                 'FILL' 0,
@@ -47,19 +97,20 @@
                 'GRAD' 0,
                 'opsz' 24
         }
-        
+
         /* Mobile menu styles */
         .mobile-menu {
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
         }
-        
+
         .mobile-menu.open {
             transform: translateX(0);
         }
-        
+
         /* Ensure images don't overflow on small screens */
-        img, .bg-cover {
+        img,
+        .bg-cover {
             max-width: 100%;
             height: auto;
         }
@@ -101,9 +152,10 @@
                     </button>
                 </div>
             </header>
-            
+
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-background-light dark:bg-background-dark z-50 shadow-lg p-6 md:hidden">
+            <div id="mobile-menu"
+                class="mobile-menu fixed top-0 right-0 h-full w-64 bg-background-light dark:bg-background-dark z-50 shadow-lg p-6 md:hidden">
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-lg font-bold text-brown dark:text-primary">Menu</h2>
                     <button id="mobile-menu-close" class="p-2 rounded-md text-brown dark:text-background-light">
@@ -140,7 +192,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Timeline Section -->
                 <div class="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20">
                     <div class="max-w-4xl mx-auto">
@@ -156,9 +208,11 @@
                                 <p
                                     class="text-secondary dark:text-primary text-sm font-bold uppercase tracking-widest font-display">
                                     2018</p>
-                                <p class="text-xl sm:text-2xl font-bold font-display mt-1">Our Roots: A Commitment to Quality and
+                                <p class="text-xl sm:text-2xl font-bold font-display mt-1">Our Roots: A Commitment to
+                                    Quality and
                                     Community</p>
-                                <p class="text-[#897c61] dark:text-[#a1967d] text-base sm:text-lg mt-2 font-body">Founded on the
+                                <p class="text-[#897c61] dark:text-[#a1967d] text-base sm:text-lg mt-2 font-body">
+                                    Founded on the
                                     principles of fairness and transparency, we began our journey by partnering with a
                                     small group of dedicated farmers, sharing a vision to bring the purest turmeric to
                                     the world.</p>
@@ -175,8 +229,10 @@
                                 <p
                                     class="text-secondary dark:text-primary text-sm font-bold uppercase tracking-widest font-display">
                                     2019</p>
-                                <p class="text-xl sm:text-2xl font-bold font-display mt-1">Sowing the Seeds of Sustainability</p>
-                                <p class="text-[#897c61] dark:text-[#a1967d] text-base sm:text-lg mt-2 font-body">We implemented
+                                <p class="text-xl sm:text-2xl font-bold font-display mt-1">Sowing the Seeds of
+                                    Sustainability</p>
+                                <p class="text-[#897c61] dark:text-[#a1967d] text-base sm:text-lg mt-2 font-body">We
+                                    implemented
                                     organic farming methods and water conservation techniques, ensuring our practices
                                     not only yield high-quality turmeric but also nurture the land for future
                                     generations.</p>
@@ -193,9 +249,11 @@
                                 <p
                                     class="text-secondary dark:text-primary text-sm font-bold uppercase tracking-widest font-display">
                                     2020</p>
-                                <p class="text-xl sm:text-2xl font-bold font-display mt-1">Harvesting a Brighter Future for Our
+                                <p class="text-xl sm:text-2xl font-bold font-display mt-1">Harvesting a Brighter Future
+                                    for Our
                                     Farmers</p>
-                                <p class="text-[#897c61] dark:text-[#a1967d] text-base sm:text-lg mt-2 font-body">By establishing
+                                <p class="text-[#897c61] dark:text-[#a1967d] text-base sm:text-lg mt-2 font-body">By
+                                    establishing
                                     fair trade practices, we empowered our partner farmers, ensuring they receive a just
                                     price for their hard work and dedication, fostering economic stability in their
                                     communities.</p>
@@ -211,8 +269,10 @@
                                 <p
                                     class="text-secondary dark:text-primary text-sm font-bold uppercase tracking-widest font-display">
                                     2021</p>
-                                <p class="text-xl sm:text-2xl font-bold font-display mt-1">The Journey of Our Turmeric</p>
-                                <p class="text-[#897c61] dark:text-[#a1967d] text-base sm:text-lg mt-2 font-body">Our turmeric
+                                <p class="text-xl sm:text-2xl font-bold font-display mt-1">The Journey of Our Turmeric
+                                </p>
+                                <p class="text-[#897c61] dark:text-[#a1967d] text-base sm:text-lg mt-2 font-body">Our
+                                    turmeric
                                     now travels from the fertile soils of our farms to kitchens across the globe, a
                                     golden thread connecting people and cultures through its vibrant flavor and
                                     healthful properties.</p>
@@ -220,18 +280,20 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Mission, Vision, Values Section -->
                 <div class="bg-secondary/5 dark:bg-primary/5 py-12 sm:py-16 md:py-24">
                     <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
-                        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 font-display">Our Mission, Vision, and Values</h2>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 font-display">Our Mission,
+                            Vision, and Values</h2>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                             <div
                                 class="text-center p-6 bg-background-light dark:bg-background-dark rounded-xl shadow-lg">
                                 <span
                                     class="material-symbols-outlined text-4xl text-accent dark:text-primary">rocket_launch</span>
                                 <h3 class="text-xl sm:text-2xl font-bold mt-4 mb-2 font-display">Our Mission</h3>
-                                <p class="font-body text-base sm:text-lg">To deliver the world's finest, ethically-sourced turmeric
+                                <p class="font-body text-base sm:text-lg">To deliver the world's finest,
+                                    ethically-sourced turmeric
                                     while empowering our farming communities and preserving the environment.</p>
                             </div>
                             <div
@@ -239,7 +301,8 @@
                                 <span
                                     class="material-symbols-outlined text-4xl text-accent dark:text-primary">visibility</span>
                                 <h3 class="text-xl sm:text-2xl font-bold mt-4 mb-2 font-display">Our Vision</h3>
-                                <p class="font-body text-base sm:text-lg">To be a global leader in sustainable turmeric export,
+                                <p class="font-body text-base sm:text-lg">To be a global leader in sustainable turmeric
+                                    export,
                                     celebrated for our unwavering commitment to quality, integrity, and social
                                     responsibility.</p>
                             </div>
@@ -248,33 +311,23 @@
                                 <span
                                     class="material-symbols-outlined text-4xl text-accent dark:text-primary">favorite</span>
                                 <h3 class="text-xl sm:text-2xl font-bold mt-4 mb-2 font-display">Our Values</h3>
-                                <p class="font-body text-base sm:text-lg">Authenticity, Sustainability, Quality, Community, and
+                                <p class="font-body text-base sm:text-lg">Authenticity, Sustainability, Quality,
+                                    Community, and
                                     Transparency guide every decision we make, from farm to table.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Gallery Section -->
                 <div class="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-10 lg:px-20">
                     <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 font-display">Our Gallery</h2>
+
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                         <div class="col-span-1">
                             <div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
-                                data-alt="Close-up of vibrant turmeric roots."
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBE043EGmtzJLpYcOz4znihV22ee1BC79I_9LHjZol0OH2PuEX-PiUsn1G_SpsWNO49MGrZ6bbHEREHS948rxAox2OsgWTAtHbiMN_kKpzjcn5FywtJF84sxtwPC0s_f_L1qf7NyIB7C66jaWo2CnDE6BGWZFSsJc8Ft0kgPUrLDcKBroPcyc4TIlVkL1nzFpxxTP3FJtceHKsFpuyl_w15tj25u9aezkFv4v1QlnclV-do_QMygLpyw_bS9cB93QoecD3jB-wkx34");'>
-                            </div>
-                        </div>
-                        <div class="col-span-1">
-                            <div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
                                 data-alt="A farmer smiling in a turmeric field."
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0NqQ2BQXOXol82JSYP22BwTrVSe_foqf6W6XYHsbNeCMN-LdhCAPzqR2RkunMigaFym6XHr01rt8jjj8zWRX3es4mbEJWJCMXNTYV-BKeDlUQOJj42IhmBiVweYLYuPAdR2N0iMbTmOspS6ULH3ke9r2vPMl1lXHyrZ6Smhvl4TnhOsZWN0c0ZwhOcvFiFrdL6UehNIbBOScI-0bI-cvhovL8ABD0ZCZNFKS3tnDsFg5MeTpgvILlLUiOqZBkSAmJ_0msspkvl3Y");'>
-                            </div>
-                        </div>
-                        <div class="col-span-2 sm:col-span-1">
-                            <div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
-                                data-alt="Workers processing turmeric."
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAjAKY6wocFf1sSyI1215-2eVJdLDP_-DYdYvipwUfkwbnnB5MjSL2H9mG-q8ehE5iJPagoTPLaqbSJuXrpMAjARvvpn1jTAVcT-dD9_GQWldPGv3umHjkV4E-JoCXgvLTZI_iq4FcaW1K9fP2Aiy1sOuxkauo5mnE1Qs-8WH_130Ij-7tG1DMMoDP7_upglt8R3k5kpVjuYgPAc7S8EV8Dts-1We5HPBZbBvBJblhLpj1xm2sA8MZ8f4zhD6OuVMXJHVUbNrLsyL0");'>
+                                style='background-image: url("./img/tum.jpg");'>
                             </div>
                         </div>
                         <div class="col-span-1">
@@ -283,89 +336,122 @@
                                 style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDu6nuEaACWd1xSZXCtmH_vOojTAAPmQ357WgnGP9hraqY6zZIsIBwi9b5jNfJPoFy12EnFFSoVxcOJzkpyHUmWHW_CTjNMLpAsyoDPQGSGHNV8lWm5U6n1RfezKyZ1y-f9bQ-FdqT3lS1Kga4gaccnoZcMzR9NqH00x3UVOezR4hPyqVmJF9fJfE_6gKKMiwwZOawfOm3oYys6CdzS2H-hHWzL6MH3sZB_EYt1iFi91lRMEaWPLYgCad7jdaot9YFL0q5ojgBPo7o");'>
                             </div>
                         </div>
-                        <div class="col-span-1">
-                            <div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
-                                data-alt="Turmeric powder in a wooden bowl."
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5nsFEfmNEr3nBXbnZ1ESLqX1HK3jI5wIEraWMH2fUs0xK7XbXH17QJJapsMNsYLR_ZnbNJfUZpJ5_T8k7J9g3GaogcV7O8__InX7SZ-VQInY5XEzXTCxv90VOn_aeKxi5UiWy9fIwxhZ5DhCO1EemxCQT3MMO9fC0KTD1jCuhwRjSaEJf6pwhvzBoiKOh8IA0x1pMI3PyFyBmnKW8b4fA9d504C8vK1UoclaVfAKeIMqT7nQdhvP9WiA4toD-nrDD2GBN1AEOJCQ");'>
-                            </div>
-                        </div>
                         <div class="col-span-2 sm:col-span-1">
                             <div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
                                 data-alt="A community of farmers together."
-                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxgd4BwFRluhR9KzkRp-QrkHX8oL1zpXp8HhCPQf_75QTRaDeNtDNU0zpqiA5ZdVWXEYzLbQ5Ls_cMYozT7THnwj5WKQgSx3Dy-0OceyenegYM6W5kkHf1dhzQd5rpL5CZ7_9ETI6YtsjBxNU98eU_i1BXVKmJMgSwLNnPAs8CJ-LzH90ACQvC74bNzQBZ8yil06--c_mAE5xtcX8Dgdoqgfxq6Px_R84VUG6QpbKz2IDUXKH0vOzViHpfl1WLX7BZyHnsfHPpJ3k");'>
+                                style='background-image: url("./img/1130409_1642438734pvJfHa.jpg");'>
+                            </div>
+                        </div>
+                        <div class="col-span-1">
+                            <div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                                data-alt="Close-up of vibrant turmeric roots."
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBE043EGmtzJLpYcOz4znihV22ee1BC79I_9LHjZol0OH2PuEX-PiUsn1G_SpsWNO49MGrZ6bbHEREHS948rxAox2OsgWTAtHbiMN_kKpzjcn5FywtJF84sxtwPC0s_f_L1qf7NyIB7C66jaWo2CnDE6BGWZFSsJc8Ft0kgPUrLDcKBroPcyc4TIlVkL1nzFpxxTP3FJtceHKsFpuyl_w15tj25u9aezkFv4v1QlnclV-do_QMygLpyw_bS9cB93QoecD3jB-wkx34");'>
+                            </div>
+                        </div>
+
+                        <div class="col-span-1">
+                            <div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                                data-alt="Turmeric powder in a wooden bowl."
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3HtLz-2rKAcI39m0TA9WVW4hT9ohD_9r81PVSq3hvVez41GeQMHwiHip6cReZYL2BeNxW4ux0Cr1ReD3Msx6WbLpkGfs-zW6yx_7j57rNwoPNyN-uDyD3manj6IOLusrhTAOc3xQ3Y0t0fwtTvZpcbMJIV0wDIBVAWNclY_SXdTr_I6dBoW2bnWrbJuL9D00jkfb0obW-S5bG5zRnbvmQlYdoiABbnF89UEuMQKsGf4eqkrtJpdi4F4M_0pl1ib-W9UZKPLw9pms");'>
+                            </div>
+                        </div>
+
+                        <div class="col-span-2 sm:col-span-1">
+                            <div class="w-full h-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                                data-alt="Workers processing turmeric."
+                                style='background-image: url("./img/Double-Polish-Turmeric-Finger.jpg");'>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- CTA Section -->
                 <div class="bg-secondary text-white dark:bg-primary dark:text-brown py-12 sm:py-16 md:py-24">
                     <div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-10 lg:px-20 text-center">
-                        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 font-display">Ready to Experience the Golden Spice?</h2>
-                        <p class="text-base sm:text-lg mb-6 sm:mb-8 font-body">Explore our range of premium turmeric products, or get in
+                        <h2 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 font-display">Ready to Experience the
+                            Golden Spice?</h2>
+                        <p class="text-base sm:text-lg mb-6 sm:mb-8 font-body">Explore our range of premium turmeric
+                            products, or get in
                             touch to learn more about partnering with us.</p>
                         <div class="flex flex-col sm:flex-row justify-center gap-4">
-                            <button
-                                class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-background-light text-secondary font-bold text-base leading-normal tracking-[0.015em] font-display hover:bg-background-light/90 transition-colors">
-                                <span class="truncate">Explore Products</span>
-                            </button>
-                            <button
+                            <a href="./contact.html">
+                                <button
+                                    class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-background-light text-secondary font-bold text-base leading-normal tracking-[0.015em] font-display hover:bg-background-light/90 transition-colors">
+                                    <span class="truncate">Partner With Us</span>
+                                </button>
+                            </a>
+                            <!-- <button
                                 class="flex min-w-[120px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 border border-background-light text-background-light font-bold text-base leading-normal tracking-[0.015em] font-display hover:bg-background-light/10 transition-colors">
                                 <span class="truncate">Partner With Us</span>
-                            </button>
+                            </button> -->
                         </div>
                     </div>
                 </div>
             </main>
-            
+
             <!-- Footer -->
-            <footer class="bg-white dark:bg-[#2c2416] border-t border-solid border-t-[#e6e2db] dark:border-t-[#3a3324] px-4 sm:px-10 lg:px-40 py-8">
+            <footer
+                class="bg-white dark:bg-[#2c2416] border-t border-solid border-t-[#e6e2db] dark:border-t-[#3a3324] px-4 sm:px-10 lg:px-40 py-8">
                 <div class="max-w-[960px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
                         <h3 class="text-lg font-bold mb-4 text-brown dark:text-primary">Turmeric Co.</h3>
-                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">Connecting farms to global markets with the highest quality, ethically sourced turmeric.</p>
+                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">Connecting farms to global markets with
+                            the highest quality, ethically sourced turmeric.</p>
                     </div>
                     <div>
                         <h3 class="text-lg font-bold mb-4 text-brown dark:text-primary">Quick Links</h3>
                         <ul class="space-y-2 text-sm">
-                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]" href="./home.html">Home</a></li>
-                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]" href="./service.html">Our Services</a></li>
-                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]" href="./aboutus.html">About Us</a></li>
-                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]" href="./contact.html">Contact</a></li>
+                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]"
+                                    href="./home.html">Home</a></li>
+                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]"
+                                    href="./service.html">Our Services</a></li>
+                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]"
+                                    href="./aboutus.html">About Us</a></li>
+                            <li><a class="hover:text-primary transition-colors text-[#897c61] dark:text-[#a1967d]"
+                                    href="./contact.html">Contact</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-lg font-bold mb-4 text-brown dark:text-primary">Contact Us</h3>
-                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">123 Turmeric Lane, Farmville, India</p>
-                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">contact@turmeric.com</p>
-                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">+1 234 567 890</p>
+                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">Parvana Nagar Nanded, Maharashtra, India
+                        </p>
+                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">goldenspiceventure@gmail.com</p>
+                        <p class="text-sm text-[#897c61] dark:text-[#a1967d]">+91 97636 06444</p>
                     </div>
                 </div>
-                <div class="mt-8 pt-8 border-t border-primary/20 text-center text-sm text-[#897c61] dark:text-[#a1967d]">
+                <div
+                    class="mt-8 pt-8 border-t border-primary/20 text-center text-sm text-[#897c61] dark:text-[#a1967d]">
                     © 2024 Golden Spice Venture All Rights Reserved.
                 </div>
             </footer>
         </div>
     </div>
-    
+
+    <a href="https://wa.me/919763606444" target="_blank" rel="noopener noreferrer" class="whatsapp-float"
+        title="Send Message">
+        <img src="./img/whatsapp icon_8704827.png" alt="WhatsApp" class="whatsapp-icon">
+        <span class="tooltip">Send Message</span>
+    </a>
+
+
     <script>
         // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const mobileMenuClose = document.getElementById('mobile-menu-close');
             const mobileMenu = document.getElementById('mobile-menu');
-            
+
             if (mobileMenuToggle && mobileMenuClose && mobileMenu) {
-                mobileMenuToggle.addEventListener('click', function() {
+                mobileMenuToggle.addEventListener('click', function () {
                     mobileMenu.classList.add('open');
                 });
-                
-                mobileMenuClose.addEventListener('click', function() {
+
+                mobileMenuClose.addEventListener('click', function () {
                     mobileMenu.classList.remove('open');
                 });
-                
+
                 // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
+                document.addEventListener('click', function (event) {
                     if (!mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
                         mobileMenu.classList.remove('open');
                     }

@@ -43,20 +43,22 @@
                 'GRAD' 0,
                 'opsz' 24
         }
-        
+
         /* Mobile menu styles */
         .mobile-menu {
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
         }
-        
+
         .mobile-menu.open {
             transform: translateX(0);
         }
-        
+
         /* Ensure form elements are properly sized on mobile */
-        input, textarea {
-            font-size: 16px; /* Prevents zoom on iOS */
+        input,
+        textarea {
+            font-size: 16px;
+            /* Prevents zoom on iOS */
         }
     </style>
 </head>
@@ -96,9 +98,10 @@
                     </button>
                 </div>
             </header>
-            
+
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-background-light dark:bg-background-dark z-50 shadow-lg p-6 md:hidden">
+            <div id="mobile-menu"
+                class="mobile-menu fixed top-0 right-0 h-full w-64 bg-background-light dark:bg-background-dark z-50 shadow-lg p-6 md:hidden">
                 <div class="flex justify-between items-center mb-8">
                     <h2 class="text-lg font-bold text-brown dark:text-primary">Menu</h2>
                     <button id="mobile-menu-close" class="p-2 rounded-md text-brown dark:text-background-light">
@@ -116,7 +119,7 @@
                         href="#">Contact Us</a>
                 </div>
             </div>
-            
+
             <main class="flex-1 px-4 sm:px-10 lg:px-40 py-6 md:py-10">
                 <div class="layout-content-container flex flex-col max-w-[80vw] mx-auto">
                     <div class="flex flex-col gap-6 p-4">
@@ -130,7 +133,7 @@
                             </p>
                         </div>
                     </div>
-                    
+
                     <!-- Optional Hero Image (commented out in original) -->
                     <!-- <div class="w-full h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden my-6 md:my-8">
                         <div class="w-full h-full bg-center bg-no-repeat bg-cover"
@@ -138,10 +141,11 @@
                             style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFR9ls2PbeyAerF9K8hO50ebwZXo5aPfYIlENQSAyK0bdlrcl24YNsVKe33yZTfHr3AX18yVL9tv__02uRPpdouu45Xooy4Ks-Umfk7F-Nd6BaOURZVXZp1R3vzETdohOkxSrOOndljMuTp2HIqd0s6M3fSJCseEiath_10EtukF1U40S9w4sKf5stX8V4Ky9KCg0zC7YmFaetZqh61GuFUwLkHZeaCcIsMZ2owpunnsM6WIQTw4IPyiTrKW_e-iAFyUI9sCcf6SY");'>
                         </div>
                     </div> -->
-                    
+
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mt-6 md:mt-8">
                         <div class="flex flex-col gap-6 md:gap-8">
-                            <h2 class="text-xl md:text-2xl font-bold text-brown dark:text-primary">Contact Information</h2>
+                            <h2 class="text-xl md:text-2xl font-bold text-brown dark:text-primary">Contact Information
+                            </h2>
                             <div class="space-y-4 md:space-y-6">
                                 <div class="flex items-start gap-4">
                                     <div class="rounded-full bg-primary/20 dark:bg-primary/30 p-2.5 mt-1 flex-shrink-0">
@@ -152,7 +156,7 @@
                                             class="text-brown dark:text-background-light text-base font-medium leading-normal">
                                             Email</p>
                                         <a class="text-[#897c61] dark:text-[#a1967d] text-sm font-normal leading-normal hover:text-green dark:hover:text-green break-words"
-                                            href="mailto:contact@turmeric.com">contact@turmeric.com</a>
+                                            href="mailto:contact@turmeric.com">goldenspiceventure@gmail.com</a>
                                     </div>
                                 </div>
                                 <div class="flex items-start gap-4">
@@ -165,7 +169,7 @@
                                             class="text-brown dark:text-background-light text-base font-medium leading-normal">
                                             Phone</p>
                                         <a class="text-[#897c61] dark:text-[#a1967d] text-sm font-normal leading-normal hover:text-green dark:hover:text-green"
-                                            href="tel:+1234567890">+1 234 567 890</a>
+                                            href="tel:+1234567890">+91 97636 06444</a>
                                     </div>
                                 </div>
                                 <div class="flex items-start gap-4">
@@ -179,7 +183,7 @@
                                             Address</p>
                                         <p
                                             class="text-[#897c61] dark:text-[#a1967d] text-sm font-normal leading-normal">
-                                            123 Turmeric Lane, Farmville, India</p>
+                                            Parvana Nagar Nanded, Maharashtra, India</p>
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +220,8 @@
                         <div class="bg-white dark:bg-[#2c2416] p-4 sm:p-6 md:p-8 rounded-xl shadow-lg">
                             <form class="space-y-4 md:space-y-6">
                                 <div>
-                                    <label class="block text-sm font-medium text-brown dark:text-background-light mb-1 md:mb-2"
+                                    <label
+                                        class="block text-sm font-medium text-brown dark:text-background-light mb-1 md:mb-2"
                                         for="name">Name</label>
                                     <div>
                                         <input autocomplete="name"
@@ -225,7 +230,8 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-medium text-brown dark:text-background-light mb-1 md:mb-2"
+                                    <label
+                                        class="block text-sm font-medium text-brown dark:text-background-light mb-1 md:mb-2"
                                         for="email">Email</label>
                                     <div>
                                         <input autocomplete="email"
@@ -234,7 +240,8 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-medium text-brown dark:text-background-light mb-1 md:mb-2"
+                                    <label
+                                        class="block text-sm font-medium text-brown dark:text-background-light mb-1 md:mb-2"
                                         for="subject">Subject</label>
                                     <div>
                                         <input
@@ -243,7 +250,8 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-medium text-brown dark:text-background-light mb-1 md:mb-2"
+                                    <label
+                                        class="block text-sm font-medium text-brown dark:text-background-light mb-1 md:mb-2"
                                         for="message">Message</label>
                                     <div>
                                         <textarea
@@ -261,7 +269,7 @@
                             </form>
                         </div>
                     </div>
-                    
+
                 </div>
             </main>
             <footer
@@ -271,25 +279,25 @@
             </footer>
         </div>
     </div>
-    
+
     <script>
         // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const mobileMenuClose = document.getElementById('mobile-menu-close');
             const mobileMenu = document.getElementById('mobile-menu');
-            
+
             if (mobileMenuToggle && mobileMenuClose && mobileMenu) {
-                mobileMenuToggle.addEventListener('click', function() {
+                mobileMenuToggle.addEventListener('click', function () {
                     mobileMenu.classList.add('open');
                 });
-                
-                mobileMenuClose.addEventListener('click', function() {
+
+                mobileMenuClose.addEventListener('click', function () {
                     mobileMenu.classList.remove('open');
                 });
-                
+
                 // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
+                document.addEventListener('click', function (event) {
                     if (!mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
                         mobileMenu.classList.remove('open');
                     }

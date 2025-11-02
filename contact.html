@@ -35,6 +35,47 @@
             },
         }
     </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+            (function () {
+                emailjs.init("2S7HfL582aL8B9S70"); // Replace with your EmailJS public key
+            })();
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            if (!form) return;
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const subject = document.getElementById("subject").value;
+                const message = document.getElementById("message").value;
+
+                emailjs.send("service_hnpq3cb", "template_0zpjwmx", {
+                    name: name,
+                    email: email,
+                    subject: subject,
+                    message: message
+                })
+
+                    .then(function (response) {
+                        alert("✅ Message sent successfully!");
+                        // form.reset();
+                    }, function (error) {
+                        alert("❌ Failed to send message. Please try again later.");
+                        console.error("EmailJS error:", error);
+                    });
+            });
+        });
+    </script>
+
+
+
     <style>
         .material-symbols-outlined {
             font-variation-settings:
@@ -67,18 +108,17 @@
     <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
         <div class="layout-container flex h-full grow flex-col">
             <header
-                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e2db] dark:border-b-[#3a3324] px-4 sm:px-10 lg:px-40 py-3 bg-background-light dark:bg-background-dark">
+                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e2db] dark:border-b-[#3a3324] px-4 sm:px-10 lg:px-40 py-0.5 bg-background-light dark:bg-background-dark">
                 <div class="flex items-center gap-4">
-                    <div class="size-6 text-primary">
-                        <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z">
-                            </path>
-                        </svg>
+                    <div style="width: 80px; height: 80px;">
+                        <img src="./img/logo.png" alt="Golden Spice Logo"
+                            style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
                     <h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-brown dark:text-primary">
-                        Golden spice Venture</h2>
+                        Golden Spices Venture
+                    </h2>
                 </div>
+
                 <div class="hidden md:flex flex-1 justify-end gap-8">
                     <div class="flex items-center gap-9">
                         <a class="text-sm font-medium leading-normal text-brown dark:text-background-light hover:text-green dark:hover:text-green"
@@ -134,13 +174,6 @@
                         </div>
                     </div>
 
-                    <!-- Optional Hero Image (commented out in original) -->
-                    <!-- <div class="w-full h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden my-6 md:my-8">
-                        <div class="w-full h-full bg-center bg-no-repeat bg-cover"
-                            data-alt="A group of smiling farmers standing in a turmeric field, showcasing the human connection behind the product."
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFR9ls2PbeyAerF9K8hO50ebwZXo5aPfYIlENQSAyK0bdlrcl24YNsVKe33yZTfHr3AX18yVL9tv__02uRPpdouu45Xooy4Ks-Umfk7F-Nd6BaOURZVXZp1R3vzETdohOkxSrOOndljMuTp2HIqd0s6M3fSJCseEiath_10EtukF1U40S9w4sKf5stX8V4Ky9KCg0zC7YmFaetZqh61GuFUwLkHZeaCcIsMZ2owpunnsM6WIQTw4IPyiTrKW_e-iAFyUI9sCcf6SY");'>
-                        </div>
-                    </div> -->
 
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mt-6 md:mt-8">
                         <div class="flex flex-col gap-6 md:gap-8">
